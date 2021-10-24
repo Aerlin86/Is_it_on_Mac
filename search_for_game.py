@@ -8,7 +8,6 @@ except ImportError:
 
 # ASKING FOR GAME NAME AND CREATING LINK FOR SITE SCRAPING
 
-
 link_input = input("Tell me, what game title do you looking for: ")
 query = "steam" + link_input
 
