@@ -7,14 +7,14 @@ try:
 except ImportError:
     print("You have to install some of the modules")
 
-# VARIABLE INPUT FROM HTML PAGE
-
 app = Flask(__name__)
 
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
     return render_template("index.html")
+
+# VARIABLE INPUT FROM HTML PAGE
 
 
 @app.route('/hello', methods=['POST', 'GET'])
