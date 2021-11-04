@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Is It On Mac</title>
+</head>
+<body>
+<h1>Is It On Mac?</h1>
+<div>
+    <p><span>Hi there</span></p>
+</div>
+
+<form action="{{ url_for('hello') }}" method="POST">
+  <div>
+    <label for="game">What game would you like to search for?</label>
+    <input name="game" id="game" value="Game name here">
+  </div>
+  <div>
+    <button>Is it on Mac?</button>
+  </div>
+</form>
+
+</body>
+</html>
