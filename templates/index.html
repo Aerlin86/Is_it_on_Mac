@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" type="text/css" href="style.css">
 <head>
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <title>Is It On Mac</title>
 </head>
 <body>
-<h1>Is It On Mac?</h1>
-<div>
-    <p><span>Hi there</span></p>
-</div>
+    <h1>Is It On Mac?</h1>
+    <div>
+        <p><span>Hi there. Let's check if your favourite game is availbe on Steam for MacOS!</span></p>
+    </div>
 
-<form action="{{ url_for('hello') }}" method="POST">
-  <div>
-    <label for="game">What game would you like to search for?</label>
-    <input name="game" id="game">
-  </div>
-  <div>
-    <button>Is it on Mac?</button>
-  </div>
+    <form action="{{ url_for('hello') }}" method="POST">
+    <div>
+        <label for="game">What game would you like to search for?</label><br>
+        <input name="game" id="game">
+    </div>
+
+    <div>
+        <button>Is it on Mac?</button>
+    </div>
 </form>
 
 </body>

@@ -1,0 +1,36 @@
+body {
+        background-color: #ebedf0;
+}
+
+h1 {
+        color: #232324;
+        font-family: helvetica;
+        font-size: 60px;
+        text-align: center;
+}
+
+p {
+        color: #232324;
+        font-family: helvetica;
+        font-size: 40px;
+        text-align: center;
+}
+
+div {
+        color: #232324;
+        font-family: helvetica;
+        text-align: center;
+}
+
+a:link, a:visited {
+        background-color: #757575;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+}
+
+a:hover, a:active {
+        background-color: #575757;
+}
