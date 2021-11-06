@@ -36,8 +36,7 @@ def hello():
     result = soup.find("div", class_="sysreq_tabs")
     if result:
         return render_template("yes.html", game=request.form['game'])
-    else:
-        return render_template("no.html", game=request.form['game'])
+    return render_template("no.html", game=request.form['game'])
 
 
 if __name__ == "__main__":
