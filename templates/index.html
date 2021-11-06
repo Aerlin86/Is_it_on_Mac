@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Is It On Mac</title>
 </head>
 <body>
@@ -14,11 +14,12 @@
     <form action="{{ url_for('hello') }}" method="POST">
     <div>
         <label for="game">What game would you like to search for?</label><br>
+        <br>
         <input name="game" id="game">
     </div>
 
     <div>
-        <button>Is it on Mac?</button>
+        <br><button>Is it on Mac?</button>
     </div>
 </form>
 

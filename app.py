@@ -1,4 +1,3 @@
-# code to search steam store for given game title
 try:
     from googlesearch import search
     import requests
@@ -14,11 +13,12 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-# VARIABLE INPUT FROM HTML PAGE
-
 
 @app.route('/hello', methods=['POST', 'GET'])
 def hello():
+
+    # VARIABLE INPUT FROM HTML PAGE
+
     pp = request.form['game']
 
     # ASKING FOR GAME NAME AND CREATING LINK FOR SITE SCRAPING
