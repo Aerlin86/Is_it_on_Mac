@@ -3,25 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <title>Is It On Mac</title>
 </head>
 <body>
     <h1>Is It On Mac?</h1>
-    <div>
-        <p><span>Hi there. Let's check if your favourite game is available on Steam for MacOS!</span></p>
+    <div class="Iam">
+
+        <p>Hi there. Let's check if your favourite game is available for MacOS on</p>
+
+        <b>
+        <div class="innerIam">
+            Steam<br />
+            GOG<br />
+            Origin<br />
+            Epic<br />
+            UPlay
+        </div>
+        </b>
     </div>
+
+    <br>
+    <br>
+    <br>
 
     <form action="{{ url_for('hello') }}" method="POST">
-    <div>
-        <label for="game">What game would you like to search for?</label><br>
-        <br>
-        <input name="game" id="game">
-    </div>
+        <div>
+            <label for="game">What game would you like to search for?</label><br>
+            <br>
+            <input name="game" id="game">
+        </div>
 
-    <div>
-        <br><button>Is it on Mac?</button>
-    </div>
-</form>
+        <div>
+            <br><button>Is it on Mac?</button>
+        </div>
+    </form>
 
 </body>
 </html>
