@@ -20,10 +20,10 @@ def hello():
     # VARIABLE INPUT FROM HTML PAGE
 
     pp = request.form['game']
+    link_input = pp
 
     # ASKING FOR GAME NAME AND CREATING LINK FOR SITE SCRAPING
 
-    link_input = pp
     query = "steam" + link_input
 
     list_of_sites = search(query, num_results=1, lang="en")
