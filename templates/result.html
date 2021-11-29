@@ -7,32 +7,28 @@
 </head>
 <body>
 <p>So, here is the answer:</p>
-<table>
-    <tr>
-        <th>Service:</th>
-        <th>Is It On Mac?</th>
-    </tr>
-    <tr>
-        <td>Steam</td>
-        <td>{{steam}}</td>
-    </tr>
-    <tr>
-        <td>GOG</td>
-        <td>{{gog}}</td>
-    </tr>
-    <tr>
-        <td>Origin</td>
-        <td>{{origin}}</td>
-    </tr>
-    <tr>
-        <td>Epic</td>
-        <td>{{epic}}</td>
-    </tr>
-    <tr>
-        <td>uPlay</td>
-        <td>{{uplay}}</td>
-    </tr>
-</table>
-<div><a href="http://127.0.0.1:5000/">Check another game.</a></div>
+
+<div style="width: 100%; overflow: hidden;">
+     <div class="left" style="width: 50%; float: left;">Steam:</div>
+     <div class="right" style="margin-left: 50%;"> {{steam}}</div>
+</div>
+<div style="width: 100%; overflow: hidden;">
+     <div class="left" style="width: 50%; float: left;">GOG:</div>
+     <div class="right" style="margin-left: 50%;"> {{gog}}</div>
+</div>
+<div style="width: 100%; overflow: hidden;">
+     <div class="left" style="width: 50%; float: left;">Origin:</div>
+     <div class="right" style="margin-left: 50%;"> {{origin}}</div>
+</div>
+<div style="width: 100%; overflow: hidden;">
+     <div class="left" style="width: 50%; float: left;">Epic:</div>
+     <div class="right" style="margin-left: 50%;"> {{epic}}</div>
+</div>
+<div style="width: 100%; overflow: hidden;">
+     <div class="left" style="width: 50%; float: left;">uPlay:</div>
+     <div class="right" style="margin-left: 50%;"> {{uplay}}</div>
+</div>
+
+<div class="check-button"><a href="http://127.0.0.1:5000/">Check another game.</a></div>
 </body>
 </html>
