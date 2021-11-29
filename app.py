@@ -23,14 +23,6 @@ def hello():
 
     # ASKING FOR GAME NAME AND CREATING LINK FOR SITE SCRAPING || SITE SCRAPING
 
-    # RESULTS
-
-    steam_answer = "NO INFORMATION"
-    gog_answer = "NO INFORMATION"
-    origin_answer = "NO INFORMATION"
-    epic_answer = "NO INFORMATION"
-    uplay_answer = "NO INFORMATION"
-
     # STEAM
     query = "steam" + link_input
 
@@ -49,9 +41,9 @@ def hello():
     query = "gog" + link_input
 
     list_of_sites = search(query, num_results=1, lang="en")
-    steam_site = list_of_sites[0]
+    gog_site = list_of_sites[0]
 
-    page = requests.get(steam_site)
+    page = requests.get(gog_site)
     soup = BeautifulSoup(page.content, "html.parser")
     result = soup.find("div", class_="details__content table__row-content")
     if result:
@@ -63,13 +55,13 @@ def hello():
     query = "ORIGIN" + link_input
 
     list_of_sites = search(query, num_results=1, lang="en")
-    steam_site = list_of_sites[0]
-    print(steam_site)
+    origin_site = list_of_sites[0]
+    print(origin_site)
 
-    page = requests.get(steam_site)
+    page = requests.get(origin_site)
     soup = BeautifulSoup(page.content, "html.parser")
     #result = soup.body.findAll(text="Mac OS")
-    result = soup.body.find("div", string="Mac")
+    result = soup.body.find("div", string="Mac").getText()
     print(result)
     if result:
         origin_answer = "YES"
@@ -80,9 +72,9 @@ def hello():
     query = "EPIC GAME STORE" + link_input
 
     list_of_sites = search(query, num_results=1, lang="en")
-    steam_site = list_of_sites[0]
+    epic_site = list_of_sites[0]
 
-    page = requests.get(steam_site)
+    page = requests.get(epic_site)
     soup = BeautifulSoup(page.content, "html.parser")
     result = soup.find("div", class_="css-13efb1d")
     if result:
