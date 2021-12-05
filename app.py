@@ -28,7 +28,9 @@ def hello():
 
     link_input = request.form['game']
 
-    # ASKING FOR GAME NAME AND CREATING LINK FOR SITE SCRAPING || SITE SCRAPING
+    # =========================
+    # SITE SCRAPING STARTS HERE
+    # =========================
 
     # STEAM
     query = "steam" + link_input
@@ -56,17 +58,7 @@ def hello():
 
     # ORIGIN
     # TODO STILL NOT WORKING
-    query = "ORIGIN" + link_input
 
-    list_of_sites = search(query, num_results=0, lang="en")
-    origin_site = list_of_sites[0]
-
-    page = requests.get(origin_site)
-    soup = BeautifulSoup(page.content, "html.parser")
-    result = soup.find("div", class_="origin-store-gdp-header-block")
-    print(result)
-    if result:
-        origin_answer = "YES"
 
     # EPIC
     query = "EPIC GAME STORE" + link_input
