@@ -20,7 +20,7 @@ def hello():
     # STANDARD ANSWERS
     steam_answer = "NO"
     gog_answer = "NO"
-    origin_answer = "NO"
+    now_answer = "NO"
     epic_answer = "NO"
     uplay_answer = "NO"
 
@@ -49,16 +49,26 @@ def hello():
 
     list_of_sites = search(query, num_results=0, lang="en")
     gog_site = list_of_sites[0]
+    print(gog_site)
 
     page = requests.get(gog_site)
     soup = BeautifulSoup(page.content, "html.parser")
-    result = soup.find("div", class_="details__content table__row-content")
+    result = soup.find("svg", class_="ic-svg productcard-os-support__system productcard-os-support__system--osx")
+    print(result)
     if result:
         gog_answer = "YES"
 
-    # ORIGIN
-    # TODO STILL NOT WORKING
+    # NOW
+    now_site = "https://www.nvidia.com/pl-pl/geforce-now/games/"
 
+    page = requests.get(now_site)
+    soup = BeautifulSoup(page.content, "html.parser")
+
+    child_soup = soup.find_all('span')
+    # print(child_soup)
+    for i in child_soup:
+        if (i == link_input):
+            print(i)
 
     # EPIC
     query = "EPIC GAME STORE" + link_input
@@ -72,7 +82,7 @@ def hello():
     if result:
         epic_answer = "YES"
 
-    return render_template('result.html', steam=steam_answer, gog=gog_answer, origin=origin_answer, epic=epic_answer, uplay=uplay_answer)
+    return render_template('result.html', steam=steam_answer, gog=gog_answer, now=now_answer, epic=epic_answer, uplay=uplay_answer)
 
 
 if __name__ == "__main__":
