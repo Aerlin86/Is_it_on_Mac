@@ -45,16 +45,14 @@ def hello():
         steam_answer = "YES"
 
     # GOG
-    query = "gog" + link_input
-
+    query = "gog " + link_input
     list_of_sites = search(query, num_results=0, lang="en")
     gog_site = list_of_sites[0]
-    print(gog_site)
 
     page = requests.get(gog_site)
     soup = BeautifulSoup(page.content, "html.parser")
     result = soup.find("svg", class_="ic-svg productcard-os-support__system productcard-os-support__system--osx")
-    print(result)
+
     if result:
         gog_answer = "YES"
 
@@ -78,7 +76,7 @@ def hello():
 
     page = requests.get(epic_site)
     soup = BeautifulSoup(page.content, "html.parser")
-    result = soup.find("div", class_="css-13efb1d")
+    result = soup.find("li", {"data-testid": "metadata-platform-mac"})
     if result:
         epic_answer = "YES"
 
