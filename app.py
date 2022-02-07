@@ -57,16 +57,19 @@ def hello():
         gog_answer = "YES"
 
     # NOW
-    now_site = "https://www.nvidia.com/pl-pl/geforce-now/games/"
+    now_site = "https://www.nvidia.com/pl-pl/geforce/geforce-experience/games/"
 
     page = requests.get(now_site)
     soup = BeautifulSoup(page.content, "html.parser")
+    child_soup = soup.find_all('div', class_="gameName optimal")
+    game_list = []
+    game_name = link_input.title()
 
-    child_soup = soup.find_all('span')
-    # print(child_soup)
     for i in child_soup:
-        if (i == link_input):
-            print(i)
+        game_list.append(f"{i}")
+    if any(game_name in word for word in game_list):
+        now_answer = "YES"
+
 
     # EPIC
     query = "EPIC GAME STORE" + link_input
@@ -80,7 +83,8 @@ def hello():
     if result:
         epic_answer = "YES"
 
-    return render_template('result.html', steam=steam_answer, gog=gog_answer, now=now_answer, epic=epic_answer, uplay=uplay_answer)
+    return render_template('result.html', steam=steam_answer, gog=gog_answer, now=now_answer,
+                           epic=epic_answer, uplay=uplay_answer)
 
 
 if __name__ == "__main__":
