@@ -1,10 +1,7 @@
-try:
-    from googlesearch import search
-    import requests
-    from bs4 import BeautifulSoup
-    from flask import Flask, request, render_template
-except ImportError:
-    print("You have to install some of the modules")
+from googlesearch import search
+import requests
+from bs4 import BeautifulSoup
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
@@ -69,7 +66,6 @@ def hello():
         game_list.append(f"{i}")
     if any(game_name in word for word in game_list):
         now_answer = "YES"
-
 
     # EPIC
     query = "EPIC GAME STORE" + link_input
